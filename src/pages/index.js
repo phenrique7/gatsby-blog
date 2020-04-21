@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/layout/Layout';
 import SEO from '../components/seo';
 
 export default function Index() {

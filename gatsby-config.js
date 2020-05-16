@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Gatsyby blog',
     position: 'Front-end Developer',
-    description: 'A blog about front-end development and other cool stuff.',
+    description:
+      'A blog about front-end development and other cool stuff.',
     author: '@gatsby-blog',
   },
   plugins: [
@@ -33,4 +34,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};

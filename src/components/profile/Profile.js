@@ -1,5 +1,9 @@
 import * as React from 'react';
 
+/**
+ * @returns {React.ReactNode}
+ * @constructor
+ */
 export default function Profile() {
   return (
     <div className="Profile-wrapper">

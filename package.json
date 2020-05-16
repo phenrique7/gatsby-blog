@@ -27,7 +27,9 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "GRAPHQL_=playground gatsby develop",
+    "develop:playground:unix": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "develop:playground:windows": "set GATSBY_GRAPHQL_IDE=playground&& gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

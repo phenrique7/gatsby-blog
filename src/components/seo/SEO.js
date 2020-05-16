@@ -13,8 +13,10 @@ import { useStaticQuery, graphql } from 'gatsby';
  */
 export default function SEO({ description, lang, meta, title }) {
   const {
-    /** @type {{siteMetadata: SiteMetadata}} */
-    site
+    site: {
+      /** @type {SiteMetadata} */
+      siteMetadata,
+    },
   } = useStaticQuery(
     graphql`
       query {
@@ -29,13 +31,13 @@ export default function SEO({ description, lang, meta, title }) {
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || siteMetadata.description;
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -59,7 +61,7 @@ export default function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: siteMetadata.author,
         },
         {
           name: `twitter:title`,
@@ -75,9 +77,9 @@ export default function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: 'en',
   meta: [],
-  description: ``,
+  description: '',
 };
 
 SEO.propTypes = {

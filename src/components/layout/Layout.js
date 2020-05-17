@@ -1,8 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Sidebar from '../sidebar/Sidebar';
-import * as S from './Layout.style';
 import GlobalStyle from '../../styles/global';
+import MenuBar from '../menu-bar/MenuBar';
+import * as S from './Layout.style';
 
 /**
  * @param {React.ReactNode} children
@@ -15,6 +16,7 @@ export default function Layout({ children }) {
       <GlobalStyle />
       <Sidebar />
       <S.LayoutMain>{children}</S.LayoutMain>
+      <MenuBar />
     </S.LayoutRoot>
   );
 }

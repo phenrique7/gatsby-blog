@@ -1,6 +1,10 @@
 import * as React from 'react';
 import * as S from './Menu.style';
 
+/**
+ * @returns {React.ReactNode}
+ * @constructor
+ */
 export default function Menu() {
   return (
     <nav>

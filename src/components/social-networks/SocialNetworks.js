@@ -41,6 +41,10 @@ const socialNetworks = [
   },
 ];
 
+/**
+ * @returns {React.ReactNode}
+ * @constructor
+ */
 export default function SocialNetworks() {
   return (
     <S.SocialNetworksRoot>

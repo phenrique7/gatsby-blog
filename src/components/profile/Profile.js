@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Avatar from '../avatar/Avatar';
+import * as S from './Profile.style';
 
 /**
  * @returns {React.ReactNode}
@@ -27,11 +28,17 @@ export default function Profile() {
   );
 
   return (
-    <div className="Profile-wrapper">
-      <Avatar />
-      <h1>{siteMetadata.title}</h1>
-      <h2>{siteMetadata.position}</h2>
-      <p>{siteMetadata.description}</p>
-    </div>
+    <S.ProfileRoot>
+      <S.ProfileLink>
+        <Avatar />
+        <S.ProfileAuthor>
+          {siteMetadata.title}
+          <S.ProfilePosition>{siteMetadata.position}</S.ProfilePosition>
+        </S.ProfileAuthor>
+      </S.ProfileLink>
+      <S.ProfileDescription>
+        {siteMetadata.description}
+      </S.ProfileDescription>
+    </S.ProfileRoot>
   );
 }

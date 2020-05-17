@@ -72,5 +72,6 @@ export default createGlobalStyle`
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     font-size: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 `;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
+import * as S from './Avatar.style';
 
 export default function Avatar() {
   const { avatar } = useStaticQuery(graphql`
@@ -15,5 +15,7 @@ export default function Avatar() {
     }
   `);
 
-  return <Image fixed={avatar.childImageSharp.fixed} alt="Avatar" />;
+  return (
+    <S.AvatarRoot fixed={avatar.childImageSharp.fixed} alt="Avatar" />
+  );
 }

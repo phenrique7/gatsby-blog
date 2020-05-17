@@ -29,7 +29,7 @@ export default function Profile() {
 
   return (
     <S.ProfileRoot>
-      <S.ProfileLink>
+      <S.ProfileLink to="/">
         <Avatar />
         <S.ProfileAuthor>
           {siteMetadata.title}

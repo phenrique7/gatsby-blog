@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Profile from '../profile/Profile';
+import Sidebar from '../sidebar/Sidebar';
 import * as S from './Layout.style';
 import GlobalStyle from '../../styles/global';
 
@@ -13,9 +13,7 @@ export default function Layout({ children }) {
   return (
     <S.LayoutRoot>
       <GlobalStyle />
-      <aside>
-        <Profile />
-      </aside>
+      <Sidebar />
       <S.LayoutMain>{children}</S.LayoutMain>
     </S.LayoutRoot>
   );

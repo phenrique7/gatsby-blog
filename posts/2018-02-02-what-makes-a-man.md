@@ -1,29 +1,44 @@
 ---
-date: 2020-05-17 05:54:23
-title: Two things are infinite
-description: I'm not sure about the universe.
-category: Misc
-background: '#7AAB13'
+date: 2018-02-02 05:54:23
+title: What makes a man?
+description: Spend his whole life in disguise?
+category: misc
+background: '#47650b'
 ---
-
-# Lorem ipsum
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet
 risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed
-enim mi, [adipiscing](http://google.com) eu pulvinar vel, sodales vitae
-dui. :thumbsup: :smile: :sparkler:
+enim mi, [bibendum](http://google.com) eu pulvinar vel, sodales vitae dui.
 
-```javascript
-let a = 3;
-console.log(a);
-```
-
-## Fusce a metus eu
-
-Pellentesque `sed` sapien lorem, at lacinia urna. In hac habitasse platea
+Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea
 dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum
 ullamcorper rutrum.
+
+```jsx
+import React from 'react';
+import Profile from '../Profile';
+import SocialLinks from '../SocialLinks';
+import MenuLinks from '../MenuLinks';
+
+import * as S from './styled';
+
+const Sidebar = () => (
+  <S.SidebarWrapper>
+    <Profile />
+    <SocialLinks />
+    <MenuLinks />
+  </S.SidebarWrapper>
+);
+
+export default Sidebar;
+```
+
+Fusce a metus eu diam varius congue nec nec sapien. Vestibulum orci tortor,
+sollicitudin ac euismod non, placerat ac augue. Nunc convallis accumsan
+justo. Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac turpis egestas. Donec malesuada vehicula lectus, viverra sodales
+ipsum gravida nec.
 
 > Proin ornare ligula eu tellus tempus elementum. Aenean bibendum iaculis
 > mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a
@@ -44,28 +59,6 @@ Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea
 dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum
 ullamcorper rutrum.
-
-Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet
-risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed
-enim mi, bibendum eu pulvinar vel, sodales vitae dui. Pellentesque sed
-sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus
-vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit
-amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum.
-
-#### Proin suscipit luctus
-
-Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea
-dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum
-ullamcorper rutrum.
-
-- Lorem
-- Ipsum
-- Dolor
-- Sit
-- amet
-
-#### Sed enim mi
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet
 risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import Menu from './Menu';
+import Menu from '../Menu';
 
 describe('<Menu /> test suite', () => {
   it('should render the component correctly', () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import Post from './Post';
+import Post from '../Post';
 
 describe('<Post /> test suite', () => {
   it('should render the component correctly', function () {

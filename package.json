@@ -64,7 +64,7 @@
   "lint-staged": {
     "./**/*.js": [
       "./node_modules/.bin/eslint",
-      "./node_modules/.bin/prettier --write \"**/*.{js,jsx,json,md}\""
+      "./node_modules/.bin/prettier --write \"**/*.{js,ts,tsx,json,md}\""
     ]
   },
   "husky": {

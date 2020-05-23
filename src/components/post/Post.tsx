@@ -39,4 +39,3 @@ export default function Post(props: PostProps) {
     </S.PostRoot>
   );
 }
-

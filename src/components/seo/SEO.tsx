@@ -17,7 +17,7 @@ export default function SEO(props: SEOProps) {
   const { description = '', lang = 'en', title } = props;
   const {
     site: { siteMetadata },
-  } : QueryData = useStaticQuery(
+  }: QueryData = useStaticQuery(
     graphql`
       query {
         site {

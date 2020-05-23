@@ -1,20 +1,83 @@
 import * as React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/seo/SEO';
 import Post from '../components/post/Post';
 
+interface Frontmatter {
+  title: string;
+  description: string;
+  category: string;
+  background: string;
+  date: string;
+}
+
+interface Node {
+  fields: { slug: string };
+  frontmatter: Frontmatter;
+  timeToRead: string;
+}
+
+interface AllMarkdownRemark {
+  edges: { node: Node }[];
+}
+
 export default function Index() {
+  const {
+    allMarkdownRemark,
+  }: { allMarkdownRemark: AllMarkdownRemark } = useStaticQuery(graphql`
+    query PostList {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              description
+              category
+              background
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            }
+            timeToRead
+          }
+        }
+      }
+    }
+  `);
+
+  const postList = allMarkdownRemark.edges;
+
   return (
     <Layout>
       <SEO title="Home" />
-      <Post
-        slug="/about"
-        category="Misc"
-        date="30 de Julho de 2019"
-        timeToRead="5"
-        title="Diga não ao Medium: tenha sua própria plataforma"
-        description="Algumas razões para você ter sua própria plataforma ao invés de soluções como o Medium"
-      />
+      {postList.map(
+        ({
+          node: {
+            fields: { slug },
+            frontmatter: {
+              title,
+              description,
+              date,
+              category,
+              background,
+            },
+            timeToRead,
+          },
+        }) => (
+          <Post
+            key={title}
+            slug={slug}
+            category={category}
+            date={date}
+            timeToRead={timeToRead}
+            title={title}
+            description={description}
+            background={background}
+          />
+        ),
+      )}
     </Layout>
   );
 }

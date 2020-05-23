@@ -56,10 +56,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "GRAPHQL_=playground gatsby develop",
-    "develop:playground:unix": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
-    "develop:playground:windows": "set GATSBY_GRAPHQL_IDE=playground&& gatsby develop",
-    "start": "npm run develop",
+    "dev": "GRAPHQL_=playground gatsby develop",
+    "dev:playground:unix": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "dev:playground:windows": "set GATSBY_GRAPHQL_IDE=playground&& gatsby develop",
+    "start": "npm run dev",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest"

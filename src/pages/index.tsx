@@ -3,14 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/seo/SEO';
 import Post from '../components/post/Post';
-
-interface Frontmatter {
-  title: string;
-  description: string;
-  category: string;
-  background: string;
-  date: string;
-}
+import { Frontmatter } from '../utils/types';
 
 interface Node {
   fields: { slug: string };

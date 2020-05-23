@@ -4,3 +4,11 @@ export interface SiteMetadata {
   position: string;
   description: string;
 }
+
+export interface Frontmatter {
+  title: string;
+  description: string;
+  category: string;
+  background: string;
+  date: string;
+}

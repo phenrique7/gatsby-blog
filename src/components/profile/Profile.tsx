@@ -3,16 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Avatar from '../avatar/Avatar';
 import * as S from './Profile.style';
 
-/**
- * @returns {React.ReactNode}
- * @constructor
- */
 export default function Profile() {
   const {
-    site: {
-      /** @type {SiteMetadata} */
-      siteMetadata,
-    },
+    site: { siteMetadata },
   } = useStaticQuery(
     graphql`
       query {

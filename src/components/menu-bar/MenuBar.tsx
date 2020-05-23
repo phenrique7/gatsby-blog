@@ -6,10 +6,6 @@ import { LightBulb as LightBulbIcon } from 'styled-icons/entypo';
 import { Grid as GridIcon } from 'styled-icons/boxicons-solid';
 import * as S from './MenuBar.style';
 
-/**
- * @returns {React.ReactNode}
- * @constructor
- */
 export default function MenuBar() {
   return (
     <S.MenuBarRoot>

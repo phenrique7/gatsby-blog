@@ -1,21 +1,25 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import * as S from './Post.style';
 
-/**
- * @param {PostProps} props
- * @returns {React.ReactNode}
- * @constructor
- */
-export default function Post(props) {
+interface PostProps {
+  slug: string;
+  category: string;
+  date: string;
+  timeToRead: string;
+  title: string;
+  description: string;
+  background?: string;
+}
+
+export default function Post(props: PostProps) {
   const {
     slug,
-    background,
     category,
     date,
     timeToRead,
     title,
     description,
+    background = '#1fa1f2',
   } = props;
 
   return (
@@ -36,16 +40,3 @@ export default function Post(props) {
   );
 }
 
-Post.defaultProps = {
-  background: '#1fa1f2',
-};
-
-Post.propTypes = {
-  slug: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  category: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  timeToRead: PropTypes.string.isRequired,
-};

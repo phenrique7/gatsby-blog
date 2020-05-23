@@ -4,10 +4,6 @@ import SocialNetworks from '../social-networks/SocialNetworks';
 import Menu from '../menu/Menu';
 import * as S from './Sidebar.style';
 
-/**
- * @returns {React.ReactNode}
- * @constructor
- */
 export default function Sidebar() {
   return (
     <S.SidebarRoot>

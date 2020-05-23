@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+interface PostTagProps {
+  bg: string;
+}
+
 export const PostRoot = styled.section`
   display: flex;
   border-bottom: 1px solid #38444d;
@@ -29,7 +33,7 @@ export const PostTag = styled.div`
   min-height: 5.625rem;
   min-width: 5.625rem;
   text-transform: uppercase;
-  background: ${props => props.bg};
+  background: ${(props: PostTagProps) => props.bg};
 `;
 
 export const PostInfo = styled.div`

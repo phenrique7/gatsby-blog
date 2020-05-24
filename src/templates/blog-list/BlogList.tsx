@@ -9,7 +9,7 @@ import Pagination from '../../components/pagination/Pagination';
 interface Node {
   fields: { slug: string };
   frontmatter: Frontmatter;
-  timeToRead: string;
+  timeToRead: number;
 }
 
 interface AllMarkdownRemark {

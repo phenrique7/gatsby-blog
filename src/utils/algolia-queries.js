@@ -10,11 +10,13 @@ const PostsQuery = `{
         }
         frontmatter {
           title
+          background
           description
           category
           timestamp: date
           date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
         }
+        timeToRead
         excerpt(pruneLength: 5000)
       }
     }

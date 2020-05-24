@@ -5,7 +5,7 @@ interface PostProps {
   slug: string;
   category: string;
   date: string;
-  timeToRead: string;
+  timeToRead: number;
   title: string;
   description: string;
   background?: string;

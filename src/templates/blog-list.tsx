@@ -4,6 +4,7 @@ import SEO from '../components/seo/SEO';
 import Post from '../components/post/Post';
 import Layout from '../components/layout/Layout';
 import { Frontmatter } from '../utils/types';
+import Pagination from '../components/pagination/Pagination';
 
 interface Node {
   fields: { slug: string };
@@ -17,10 +18,17 @@ interface AllMarkdownRemark {
 
 interface BlogPostProps {
   data: { allMarkdownRemark: AllMarkdownRemark };
+  pageContext: { currentPage: number; pages: number };
 }
 
-export default function BlogList({ data }: BlogPostProps) {
+export default function BlogList({ data, pageContext }: BlogPostProps) {
   const postList = data.allMarkdownRemark.edges;
+  const { currentPage, pages } = pageContext;
+  const firstPage = currentPage === 1;
+  const lastPage = currentPage === pages;
+  const prevPage =
+    currentPage - 1 === 1 ? '/' : `/page/${currentPage - 1}`;
+  const nextPage = `/page/${currentPage + 1}`;
 
   return (
     <Layout>
@@ -51,6 +59,14 @@ export default function BlogList({ data }: BlogPostProps) {
           />
         ),
       )}
+      <Pagination
+        first={firstPage}
+        last={lastPage}
+        currentPage={currentPage}
+        pages={pages}
+        prevPage={prevPage}
+        nextPage={nextPage}
+      />
     </Layout>
   );
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '../components/seo/SEO';
-import Post from '../components/post/Post';
-import Layout from '../components/layout/Layout';
-import { Frontmatter } from '../utils/types';
-import Pagination from '../components/pagination/Pagination';
+import SEO from '../../components/seo/SEO';
+import Post from '../../components/post/Post';
+import Layout from '../../components/layout/Layout';
+import { Frontmatter } from '../../utils/types';
+import Pagination from '../../components/pagination/Pagination';
 
 interface Node {
   fields: { slug: string };

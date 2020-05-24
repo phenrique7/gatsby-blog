@@ -12,3 +12,8 @@ export interface Frontmatter {
   background: string;
   date: string;
 }
+
+export interface RecommendedPost {
+  frontmatter: { title: string };
+  fields: { slug: string };
+}

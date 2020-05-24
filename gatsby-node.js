@@ -55,6 +55,22 @@ exports.createPages = ({ graphql, actions }) => {
               }
               timeToRead
             }
+            previous {
+              frontmatter {
+                title
+              }
+              fields {
+                slug
+              }
+            }
+            next {
+              frontmatter {
+                title
+              }
+              fields {
+                slug
+              }
+            }
           }
         }
       }
@@ -73,6 +89,8 @@ exports.createPages = ({ graphql, actions }) => {
         component: blogPostTemplate,
         context: {
           slug: edge.node.fields.slug,
+          previousPost: edge.next,
+          nextPost: edge.previous,
         },
       });
     });

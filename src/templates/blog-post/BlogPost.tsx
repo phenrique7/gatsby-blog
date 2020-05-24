@@ -2,7 +2,8 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../../components/layout/Layout';
 import SEO from '../../components/seo/SEO';
-import { Frontmatter } from '../../utils/types';
+import RecommendedPosts from '../../components/recommended-posts/RecommendedPosts';
+import { Frontmatter, RecommendedPost } from '../../utils/types';
 import * as S from './BlogPost.style';
 
 interface MarkdownRemark {
@@ -13,10 +14,16 @@ interface MarkdownRemark {
 
 interface BlogPostProps {
   data: { markdownRemark: MarkdownRemark };
+  pageContext: {
+    nextPost: RecommendedPost | null;
+    previousPost: RecommendedPost | null;
+  };
 }
 
-export default function BlogPost({ data }: BlogPostProps) {
+export default function BlogPost({ data, pageContext }: BlogPostProps) {
   const post = data.markdownRemark;
+  const next = pageContext.nextPost;
+  const previous = pageContext.previousPost;
 
   return (
     <Layout>
@@ -33,6 +40,7 @@ export default function BlogPost({ data }: BlogPostProps) {
       <S.MainContent>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </S.MainContent>
+      <RecommendedPosts next={next} previous={previous} />
     </Layout>
   );
 }

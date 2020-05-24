@@ -20,7 +20,9 @@ export default function Index() {
     allMarkdownRemark,
   }: { allMarkdownRemark: AllMarkdownRemark } = useStaticQuery(graphql`
     query PostList {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
         edges {
           node {
             fields {

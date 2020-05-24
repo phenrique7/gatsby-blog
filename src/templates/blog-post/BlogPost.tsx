@@ -5,8 +5,10 @@ import SEO from '../../components/seo/SEO';
 import RecommendedPosts from '../../components/recommended-posts/RecommendedPosts';
 import { Frontmatter, RecommendedPost } from '../../utils/types';
 import * as S from './BlogPost.style';
+import Comments from '../../components/comments/Comments';
 
 interface MarkdownRemark {
+  fields: { slug: string };
   frontmatter: Frontmatter;
   html: string;
   timeToRead: number;
@@ -41,6 +43,7 @@ export default function BlogPost({ data, pageContext }: BlogPostProps) {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </S.MainContent>
       <RecommendedPosts next={next} previous={previous} />
+      <Comments url={post.fields.slug} title={post.frontmatter.title} />
     </Layout>
   );
 }
@@ -48,6 +51,9 @@ export default function BlogPost({ data, pageContext }: BlogPostProps) {
 export const query = graphql`
   query Post($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       frontmatter {
         title
         description

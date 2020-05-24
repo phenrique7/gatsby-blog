@@ -20,18 +20,17 @@ import React from 'react';
 import Profile from '../Profile';
 import SocialLinks from '../SocialLinks';
 import MenuLinks from '../MenuLinks';
-
 import * as S from './styled';
 
-const Sidebar = () => (
-  <S.SidebarWrapper>
-    <Profile />
-    <SocialLinks />
-    <MenuLinks />
-  </S.SidebarWrapper>
-);
-
-export default Sidebar;
+export default function Sidebar() {
+  return (
+    <S.SidebarRoot>
+      <Profile />
+      <SocialLinks />
+      <MenuLinks />
+    </S.SidebarRoot>
+  );
+}
 ```
 
 Fusce a metus eu diam varius congue nec nec sapien. Vestibulum orci tortor,

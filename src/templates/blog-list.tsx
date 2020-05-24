@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import Layout from '../components/layout/Layout';
+import { graphql } from 'gatsby';
 import SEO from '../components/seo/SEO';
 import Post from '../components/post/Post';
+import Layout from '../components/layout/Layout';
 import { Frontmatter } from '../utils/types';
 
 interface Node {
@@ -15,34 +15,12 @@ interface AllMarkdownRemark {
   edges: { node: Node }[];
 }
 
-export default function Index() {
-  const {
-    allMarkdownRemark,
-  }: { allMarkdownRemark: AllMarkdownRemark } = useStaticQuery(graphql`
-    query PostList {
-      allMarkdownRemark(
-        sort: { fields: frontmatter___date, order: DESC }
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              description
-              category
-              background
-              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-            }
-            timeToRead
-          }
-        }
-      }
-    }
-  `);
+interface BlogPostProps {
+  data: { allMarkdownRemark: AllMarkdownRemark };
+}
 
-  const postList = allMarkdownRemark.edges;
+export default function BlogList({ data }: BlogPostProps) {
+  const postList = data.allMarkdownRemark.edges;
 
   return (
     <Layout>
@@ -76,3 +54,29 @@ export default function Index() {
     </Layout>
   );
 }
+
+export const query = graphql`
+  query BlogList($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            description
+            category
+            background
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+          }
+          timeToRead
+        }
+      }
+    }
+  }
+`;

@@ -10,12 +10,28 @@ export const PostRoot = styled.section`
   border-bottom: 1px solid var(--borders);
   padding: 2rem 3rem;
   width: 100%;
+
+  body#grid & {
+    background-color: var(--background);
+    padding: 0;
+    border: none;
+    box-shadow: 0 -1px 0 0 var(--borders), 0 1px 0 0 var(--borders),
+      1px 0 0 0 var(--borders), -1px 0 0 0 var(--borders);
+  }
 `;
 
 export const PostLink = styled(Link)`
   color: var(--texts);
   display: flex;
   align-items: center;
+
+  body#grid & {
+    border: none;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
   &:hover {
     color: var(--highlight);
@@ -34,12 +50,21 @@ export const PostTag = styled.div`
   min-width: 5.625rem;
   text-transform: uppercase;
   background: ${(props: PostTagProps) => props.bg};
+
+  body#grid & {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const PostInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 1.5rem;
+
+  body#grid & {
+    text-align: center;
+    margin-left: 0;
+  }
 `;
 
 export const PostDate = styled.span`
@@ -50,6 +75,11 @@ export const PostTitle = styled.h1`
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0.2rem 0 0.5rem;
+
+  body#grid & {
+    line-height: 1.1;
+    margin: 0.8rem 0;
+  }
 `;
 
 export const PostDescription = styled.p`

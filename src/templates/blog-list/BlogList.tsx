@@ -5,6 +5,7 @@ import Post from '../../components/post/Post';
 import Layout from '../../components/layout/Layout';
 import { Frontmatter } from '../../utils/types';
 import Pagination from '../../components/pagination/Pagination';
+import * as S from './BlogList.style';
 
 interface Node {
   fields: { slug: string };
@@ -33,32 +34,34 @@ export default function BlogList({ data, pageContext }: BlogPostProps) {
   return (
     <Layout>
       <SEO title="Home" />
-      {postList.map(
-        ({
-          node: {
-            fields: { slug },
-            frontmatter: {
-              title,
-              description,
-              date,
-              category,
-              background,
+      <S.BlogListPostList>
+        {postList.map(
+          ({
+            node: {
+              fields: { slug },
+              frontmatter: {
+                title,
+                description,
+                date,
+                category,
+                background,
+              },
+              timeToRead,
             },
-            timeToRead,
-          },
-        }) => (
-          <Post
-            key={title}
-            slug={slug}
-            category={category}
-            date={date}
-            timeToRead={timeToRead}
-            title={title}
-            description={description}
-            background={background}
-          />
-        ),
-      )}
+          }) => (
+            <Post
+              key={title}
+              slug={slug}
+              category={category}
+              date={date}
+              timeToRead={timeToRead}
+              title={title}
+              description={description}
+              background={background}
+            />
+          ),
+        )}
+      </S.BlogListPostList>
       <Pagination
         first={firstPage}
         last={lastPage}

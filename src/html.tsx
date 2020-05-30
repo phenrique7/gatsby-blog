@@ -9,6 +9,52 @@ interface HTMLProps {
   postBodyComponents: [];
 }
 
+const handleTheme = `
+  function setTheme(newTheme) {
+    window.__theme = newTheme;
+    preferredTheme = newTheme;
+    document.body.className = newTheme;
+  }
+
+  var preferredTheme;
+
+  try {
+    preferredTheme = localStorage.getItem('theme');
+  } catch (err) { }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme);
+    try {
+      localStorage.setItem('theme', newTheme);
+    } catch (err) {}
+  }
+
+  setTheme(preferredTheme || 'dark');
+`;
+
+const handleDisplay = `
+  function setDisplay(newDisplay) {
+    window.__display = newDisplay;
+    preferredDisplay = newDisplay;
+    document.body.id = newDisplay;
+  }
+
+  var preferredDisplay;
+
+  try {
+    preferredDisplay = localStorage.getItem('display');
+  } catch (err) { }
+
+  window.__setPreferredDisplay = function(newDisplay) {
+    setDisplay(newDisplay);
+    try {
+      localStorage.setItem('display', newDisplay);
+    } catch (err) {}
+  }
+
+  setDisplay(preferredDisplay || 'list');
+`;
+
 export default function HTML(props: HTMLProps) {
   return (
     <html {...props.htmlAttributes}>
@@ -26,26 +72,8 @@ export default function HTML(props: HTMLProps) {
           dangerouslySetInnerHTML={{
             __html: `
             (function() {
-              function setTheme(newTheme) {
-                window.__theme = newTheme;
-                preferredTheme = newTheme;
-                document.body.className = newTheme;
-              }
-
-              var preferredTheme;
-
-              try {
-                preferredTheme = localStorage.getItem('theme');
-              } catch (err) { }
-
-              window.__setPreferredTheme = function(newTheme) {
-                setTheme(newTheme);
-                try {
-                  localStorage.setItem('theme', newTheme);
-                } catch (err) {}
-              }
-
-              setTheme(preferredTheme || 'dark');
+              ${handleTheme}
+              ${handleDisplay}
             })();
           `,
           }}

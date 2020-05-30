@@ -12,11 +12,11 @@ export const SocialNetworksList = styled.ul`
 `;
 
 export const SocialNetworksLink = styled.a`
-  color: #8899a6;
+  color: var(--texts);
   transition: color 0.5s;
 
   &:hover {
-    color: #1fa1f2;
+    color: var(--highlight);
   }
 `;
 

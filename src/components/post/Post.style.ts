@@ -7,18 +7,18 @@ interface PostTagProps {
 
 export const PostRoot = styled.section`
   display: flex;
-  border-bottom: 1px solid #38444d;
+  border-bottom: 1px solid var(--borders);
   padding: 2rem 3rem;
   width: 100%;
 `;
 
 export const PostLink = styled(Link)`
-  color: #8899a6;
+  color: var(--texts);
   display: flex;
   align-items: center;
 
   &:hover {
-    color: #1fa1f2;
+    color: var(--highlight);
   }
 `;
 
@@ -27,7 +27,7 @@ export const PostTag = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: #fff;
+  color: var(--white);
   font-size: 1.3rem;
   font-weight: 700;
   min-height: 5.625rem;

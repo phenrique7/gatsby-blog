@@ -19,7 +19,7 @@ export default function Post(props: PostProps) {
     timeToRead,
     title,
     description,
-    background = '#1fa1f2',
+    background = 'var(--highlight)',
   } = props;
 
   return (

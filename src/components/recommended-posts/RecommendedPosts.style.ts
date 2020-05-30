@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 export const RecommendedPostsRoot = styled.section`
-  border-bottom: 1px solid #38444d;
-  border-top: 1px solid #38444d;
-  background: #192734;
+  border-bottom: 1px solid var(--borders);
+  border-top: 1px solid var(--borders);
+  background: var(--mediumBackground);
   display: flex;
 
   &.next {
@@ -14,8 +14,8 @@ export const RecommendedPostsRoot = styled.section`
 
 export const RecommendedPostsLink = styled(Link)`
   align-items: center;
-  background: #192734;
-  color: #1fa1f2;
+  background: var(--mediumBackground);
+  color: var(--highlight);
   display: flex;
   padding: 3rem;
   text-decoration: none;
@@ -23,15 +23,15 @@ export const RecommendedPostsLink = styled(Link)`
   width: 50%;
 
   &:hover {
-    background: #38444d;
+    background: var(--borders);
   }
 
   &.previous {
-    box-shadow: 1px 0 0 0 #38444d;
+    box-shadow: 1px 0 0 0 var(--borders);
   }
 
   &.next {
-    box-shadow: -1px 0 0 0 #38444d;
+    box-shadow: -1px 0 0 0 var(--borders);
   }
 
   &.previous:before {

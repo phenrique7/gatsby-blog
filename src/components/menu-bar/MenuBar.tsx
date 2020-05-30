@@ -6,7 +6,24 @@ import { LightBulb as LightBulbIcon } from 'styled-icons/entypo';
 import { Grid as GridIcon } from 'styled-icons/boxicons-solid';
 import * as S from './MenuBar.style';
 
+type Theme = 'dark' | 'light';
+
+declare global {
+  interface Window {
+    __theme: Theme;
+    __setPreferredTheme(theme: Theme): void;
+  }
+}
+
 export default function MenuBar() {
+  const [theme, setTheme] = React.useState<Theme>(window.__theme);
+
+  function setPreferredTheme() {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    window.__setPreferredTheme(newTheme);
+  }
+
   return (
     <S.MenuBarRoot>
       <S.MenuBarGroup>
@@ -22,7 +39,11 @@ export default function MenuBar() {
         </S.MenuBarLink>
       </S.MenuBarGroup>
       <S.MenuBarGroup>
-        <S.MenuBarItem title="Change theme">
+        <S.MenuBarItem
+          title="Change theme"
+          onClick={setPreferredTheme}
+          className={theme}
+        >
           <LightBulbIcon />
         </S.MenuBarItem>
         <S.MenuBarItem title="Change view">

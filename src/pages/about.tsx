@@ -2,7 +2,7 @@ import * as React from 'react';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/seo/SEO';
 
-export default function About() {
+export default function AboutPage() {
   return (
     <Layout>
       <SEO title="About" />

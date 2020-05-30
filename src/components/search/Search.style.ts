@@ -49,16 +49,19 @@ export const SearchRoot = styled.section`
   body#grid & {
     .ais-Hits-list {
       display: grid;
-      grid-area: card;
+      grid-area: posts;
       grid-gap: 1px;
       grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
       margin-top: 2rem;
     }
 
     .ais-Hits-item {
-      background-color: var(--background);
       box-shadow: 0 -1px 0 0 var(--borders), 0 1px 0 0 var(--borders),
         1px 0 0 0 var(--borders), -1px 0 0 0 var(--borders);
+
+      section {
+        box-shadow: none;
+      }
     }
   }
 `;

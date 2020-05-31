@@ -2,6 +2,7 @@ import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Avatar from '../avatar/Avatar';
 import * as S from './Profile.style';
+import { getThemeColor } from '../../utils/theme';
 
 export default function Profile() {
   const {
@@ -22,7 +23,13 @@ export default function Profile() {
 
   return (
     <S.ProfileRoot>
-      <S.ProfileLink to="/">
+      <S.ProfileLink
+        to="/"
+        direction="left"
+        duration={0.6}
+        bg={getThemeColor()}
+        cover
+      >
         <Avatar />
         <S.ProfileAuthor>
           {siteMetadata.title}

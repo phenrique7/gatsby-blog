@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+// @ts-ignore
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import * as S from './Pagination.style';
+import { getThemeColor } from '../../utils/theme';
 
 interface PaginationProps {
   first: boolean;
@@ -16,11 +18,31 @@ export default function Pagination(props: PaginationProps) {
 
   return (
     <S.PaginationRoot>
-      {!first && <Link to={prevPage}>← Página anterior</Link>}
+      {!first && (
+        <AniLink
+          to={prevPage}
+          direction="left"
+          duration={0.6}
+          bg={getThemeColor()}
+          cover
+        >
+          ← Página anterior
+        </AniLink>
+      )}
       <div>
         {currentPage} de {pages}
       </div>
-      {!last && <Link to={nextPage}>Próxima página →</Link>}
+      {!last && (
+        <AniLink
+          to={nextPage}
+          direction="right"
+          duration={0.6}
+          bg={getThemeColor()}
+          cover
+        >
+          Próxima página →
+        </AniLink>
+      )}
     </S.PaginationRoot>
   );
 }

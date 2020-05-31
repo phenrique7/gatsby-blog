@@ -1,3 +1,6 @@
+export type Theme = 'dark' | 'light';
+export type Display = 'list' | 'grid';
+
 export interface SiteMetadata {
   title: string;
   author: string;

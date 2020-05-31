@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as S from './Post.style';
+import { getThemeColor } from '../../utils/theme';
 
 interface PostProps {
   slug: string;
@@ -24,7 +25,14 @@ export default function Post(props: PostProps) {
 
   return (
     <S.PostRoot>
-      <S.PostLink to={slug} data-testid="post-link">
+      <S.PostLink
+        to={slug}
+        data-testid="post-link"
+        direction="right"
+        duration={0.6}
+        bg={getThemeColor()}
+        cover
+      >
         <S.PostTag bg={background} data-testid="post-tag">
           {category}
         </S.PostTag>

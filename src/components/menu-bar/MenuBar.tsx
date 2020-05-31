@@ -1,14 +1,19 @@
 import * as React from 'react';
+// @ts-ignore
 import { Home as HomeIcon } from 'styled-icons/boxicons-solid';
+// @ts-ignore
 import { SearchAlt2 as SearchIcon } from 'styled-icons/boxicons-regular';
+// @ts-ignore
 import { UpArrowAlt as UpArrowIcon } from 'styled-icons/boxicons-regular';
+// @ts-ignore
 import { LightBulb as LightBulbIcon } from 'styled-icons/entypo';
+// @ts-ignore
 import { Grid as GridIcon } from 'styled-icons/boxicons-solid';
+// @ts-ignore
 import { ThList as ListIcon } from 'styled-icons/typicons';
+import { Display, Theme } from '../../utils/types';
 import * as S from './MenuBar.style';
-
-type Theme = 'dark' | 'light';
-type Display = 'list' | 'grid';
+import { getThemeColor } from '../../utils/theme';
 
 declare global {
   interface Window {
@@ -43,12 +48,26 @@ export default function MenuBar() {
   return (
     <S.MenuBarRoot>
       <S.MenuBarGroup>
-        <S.MenuBarLink to="/" title="Go back to home">
+        <S.MenuBarLink
+          to="/"
+          title="Go back to home"
+          direction="right"
+          duration={0.6}
+          bg={getThemeColor()}
+          cover
+        >
           <S.MenuBarItem>
             <HomeIcon />
           </S.MenuBarItem>
         </S.MenuBarLink>
-        <S.MenuBarLink to="/search" title="Search">
+        <S.MenuBarLink
+          to="/search"
+          title="Search"
+          direction="right"
+          duration={0.6}
+          bg={getThemeColor()}
+          cover
+        >
           <S.MenuBarItem>
             <SearchIcon />
           </S.MenuBarItem>

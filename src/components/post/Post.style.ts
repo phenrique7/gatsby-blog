@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+// @ts-ignore
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+// @ts-ignore
 import media from 'styled-media-query';
 
 interface PostTagProps {
@@ -25,7 +27,7 @@ export const PostRoot = styled.section`
   `}
 `;
 
-export const PostLink = styled(Link)`
+export const PostLink = styled(AniLink)`
   color: var(--texts);
   display: flex;
   align-items: center;

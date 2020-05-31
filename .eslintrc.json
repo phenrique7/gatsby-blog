@@ -27,6 +27,7 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": ["error"],
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }

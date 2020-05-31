@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+// @ts-ignore
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+// @ts-ignore
 import media from 'styled-media-query';
 
 export const RecommendedPostsRoot = styled.section`
@@ -13,7 +15,7 @@ export const RecommendedPostsRoot = styled.section`
   }
 `;
 
-export const RecommendedPostsLink = styled(Link)`
+export const RecommendedPostsLink = styled(AniLink)`
   align-items: center;
   background: var(--mediumBackground);
   color: var(--highlight);

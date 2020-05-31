@@ -20,8 +20,13 @@ declare global {
 }
 
 export default function MenuBar() {
-  const [theme, setTheme] = React.useState<Theme>(window.__theme);
-  const [display, setDisplay] = React.useState<Display>(window.__display);
+  const [theme, setTheme] = React.useState<Theme>('dark');
+  const [display, setDisplay] = React.useState<Display>('list');
+
+  React.useEffect(() => {
+    setTheme(window.__theme);
+    setDisplay(window.__display);
+  }, []);
 
   function setPreferredTheme() {
     const newTheme = theme === 'dark' ? 'light' : 'dark';

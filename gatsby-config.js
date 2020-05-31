@@ -10,6 +10,7 @@ module.exports = {
     description:
       'A blog about front-end development and other cool stuff.',
     author: '@gatsby-blog',
+    siteUrl: 'https://johndoe.com.br',
   },
   plugins: [
     'gatsby-plugin-transition-link',

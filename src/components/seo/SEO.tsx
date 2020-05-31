@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+// @ts-ignore
 import { useStaticQuery, graphql } from 'gatsby';
 import { SiteMetadata } from '../../utils/types';
 
 interface SEOProps {
   description?: string;
   lang?: string;
+  image?: string;
   title: string;
 }
 
@@ -14,7 +16,12 @@ interface QueryData {
 }
 
 export default function SEO(props: SEOProps) {
-  const { description = '', lang = 'en', title } = props;
+  const {
+    description = '',
+    lang = 'en',
+    image = '/assets/images/cover.png',
+    title,
+  } = props;
   const {
     site: { siteMetadata },
   }: QueryData = useStaticQuery(
@@ -25,6 +32,7 @@ export default function SEO(props: SEOProps) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -32,6 +40,8 @@ export default function SEO(props: SEOProps) {
   );
 
   const metaDescription = description || siteMetadata.description;
+  const siteUrl = siteMetadata.siteUrl;
+  const ogImage = `${siteUrl}${image}`;
 
   return (
     <Helmet
@@ -56,8 +66,16 @@ export default function SEO(props: SEOProps) {
           content: 'website',
         },
         {
+          property: 'og:image',
+          content: ogImage,
+        },
+        {
           name: 'twitter:card',
-          content: 'summary',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:image:src',
+          content: ogImage,
         },
         {
           name: 'twitter:creator',

@@ -6,6 +6,7 @@ export interface SiteMetadata {
   author: string;
   position: string;
   description: string;
+  siteUrl: string;
 }
 
 export interface Frontmatter {
@@ -14,6 +15,7 @@ export interface Frontmatter {
   category: string;
   background: string;
   date: string;
+  image: string;
 }
 
 export interface RecommendedPost {

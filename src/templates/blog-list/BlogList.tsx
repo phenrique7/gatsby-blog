@@ -1,4 +1,5 @@
 import * as React from 'react';
+// @ts-ignore
 import { graphql } from 'gatsby';
 import SEO from '../../components/seo/SEO';
 import Post from '../../components/post/Post';
@@ -33,7 +34,7 @@ export default function BlogList({ data, pageContext }: BlogPostProps) {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Posts" description="Lista de posts" />
       <S.BlogListPostList>
         {postList.map(
           ({

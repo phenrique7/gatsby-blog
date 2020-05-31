@@ -1,8 +1,13 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const SocialNetworksRoot = styled.div`
   margin: 2rem auto;
   width: 100%;
+
+  ${media.lessThan('large')`
+    display: none;
+  `}
 `;
 
 export const SocialNetworksList = styled.ul`

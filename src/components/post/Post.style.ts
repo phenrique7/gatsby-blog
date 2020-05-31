@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import media from 'styled-media-query';
 
 interface PostTagProps {
   bg: string;
@@ -18,6 +19,10 @@ export const PostRoot = styled.section`
     box-shadow: 0 -1px 0 0 var(--borders), 0 1px 0 0 var(--borders),
       1px 0 0 0 var(--borders), -1px 0 0 0 var(--borders);
   }
+
+  ${media.lessThan('large')`
+    padding: 1.5rem;
+  `}
 `;
 
 export const PostLink = styled(Link)`
@@ -36,6 +41,10 @@ export const PostLink = styled(Link)`
   &:hover {
     color: var(--highlight);
   }
+
+  ${media.lessThan('large')`
+    flex-direction: column;
+  `}
 `;
 
 export const PostTag = styled.div`
@@ -54,6 +63,16 @@ export const PostTag = styled.div`
   body#grid & {
     margin-bottom: 1.5rem;
   }
+
+  ${media.lessThan('large')`
+    border-radius: 0.125rem;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    min-width: auto;
+    min-height: auto;
+    padding: 0.25rem;
+    font-size: 1rem;
+ `}
 `;
 
 export const PostInfo = styled.div`
@@ -65,6 +84,10 @@ export const PostInfo = styled.div`
     text-align: center;
     margin-left: 0;
   }
+
+  ${media.lessThan('large')`
+    margin-left: 0;
+  `}
 `;
 
 export const PostDate = styled.span`

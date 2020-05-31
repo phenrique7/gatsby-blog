@@ -7,8 +7,8 @@ export default function Avatar() {
     query Avatar {
       avatar: file(relativePath: { eq: "profile-photo.jpg" }) {
         childImageSharp {
-          fixed(width: 60, height: 60) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 60) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -16,6 +16,6 @@ export default function Avatar() {
   `);
 
   return (
-    <S.AvatarRoot fixed={avatar.childImageSharp.fixed} alt="Avatar" />
+    <S.AvatarRoot fluid={avatar.childImageSharp.fluid} alt="Avatar" />
   );
 }

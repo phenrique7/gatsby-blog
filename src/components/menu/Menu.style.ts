@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import media from 'styled-media-query';
+
+export const MenuNav = styled.nav`
+  ${media.lessThan('large')`
+    display: none;
+  `}
+`;
 
 export const MenuList = styled.ul`
   font-size: 1.2rem;

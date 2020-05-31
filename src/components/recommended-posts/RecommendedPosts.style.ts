@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import media from 'styled-media-query';
 
 export const RecommendedPostsRoot = styled.section`
   border-bottom: 1px solid var(--borders);
@@ -21,6 +22,12 @@ export const RecommendedPostsLink = styled(Link)`
   text-decoration: none;
   transition: background 0.5s;
   width: 50%;
+
+  ${media.lessThan('large')`
+    padding: 2rem 1rem;
+    line-height: 1.3;
+    font-size: .9rem;
+  `}
 
   &:hover {
     background: var(--borders);

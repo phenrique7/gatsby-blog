@@ -3,7 +3,7 @@ import * as S from './Menu.style';
 
 export default function Menu() {
   return (
-    <nav>
+    <S.MenuNav>
       <S.MenuList>
         <S.MenuItem>
           <S.MenuLink to="/" activeClassName="active">
@@ -16,6 +16,6 @@ export default function Menu() {
           </S.MenuLink>
         </S.MenuItem>
       </S.MenuList>
-    </nav>
+    </S.MenuNav>
   );
 }

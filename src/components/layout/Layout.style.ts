@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const LayoutRoot = styled.div`
   display: flex;
+
+  ${media.lessThan('large')`
+    flex-direction: column;
+  `}
 `;
 
 export const LayoutMain = styled.main`
@@ -14,4 +19,9 @@ export const LayoutMain = styled.main`
   body#grid {
     grid-template-areas: 'posts' 'pagination';
   }
+
+  ${media.lessThan('large')`
+    padding-left: 0;
+    padding-right: 0;
+  `}
 `;

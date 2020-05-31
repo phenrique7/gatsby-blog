@@ -62,7 +62,11 @@ export default function MenuBar() {
         >
           <LightBulbIcon />
         </S.MenuBarItem>
-        <S.MenuBarItem title="Change view" onClick={setPreferredDisplay}>
+        <S.MenuBarItem
+          title="Change view"
+          onClick={setPreferredDisplay}
+          className="display"
+        >
           {display === 'list' ? <GridIcon /> : <ListIcon />}
         </S.MenuBarItem>
         <S.MenuBarItem title="Go to top">

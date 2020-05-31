@@ -10,7 +10,7 @@ module.exports = {
     description:
       'A blog about front-end development and other cool stuff.',
     author: '@gatsby-blog',
-    siteUrl: 'https://johndoe.com.br',
+    siteUrl: 'https://gatsby-blog-course.netlify.app',
   },
   plugins: [
     'gatsby-plugin-transition-link',

@@ -1,5 +1,4 @@
 import * as React from 'react';
-// @ts-ignore
 import { graphql } from 'gatsby';
 import SEO from '../../components/seo/SEO';
 import Post from '../../components/post/Post';

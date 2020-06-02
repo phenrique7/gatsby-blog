@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 // @ts-ignore
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
-// @ts-ignore
 import media from 'styled-media-query';
 
 export const MenuNav = styled.nav`

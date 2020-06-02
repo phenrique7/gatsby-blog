@@ -1,5 +1,4 @@
 import * as React from 'react';
-// @ts-ignore
 import { graphql, useStaticQuery } from 'gatsby';
 import Avatar from '../avatar/Avatar';
 import * as S from './Profile.style';

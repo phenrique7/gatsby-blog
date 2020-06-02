@@ -8,8 +8,8 @@
     // "checkJs": true,
     "jsx": "react",
     "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "moduleResolution": "node",
+    "noEmit": true
   },
   "exclude": ["node_modules"]
 }

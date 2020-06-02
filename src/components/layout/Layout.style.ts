@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// @ts-ignore
 import media from 'styled-media-query';
 
 export const LayoutRoot = styled.div`

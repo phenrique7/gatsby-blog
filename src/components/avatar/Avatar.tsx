@@ -1,5 +1,4 @@
 import * as React from 'react';
-// @ts-ignore
 import { useStaticQuery, graphql } from 'gatsby';
 import * as S from './Avatar.style';
 

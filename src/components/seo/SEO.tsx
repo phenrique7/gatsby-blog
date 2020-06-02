@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-// @ts-ignore
 import { useStaticQuery, graphql } from 'gatsby';
 import { SiteMetadata } from '../../utils/types';
 

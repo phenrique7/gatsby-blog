@@ -15,9 +15,68 @@ export default defineConfig({
   // Files to exclude
   exclude: [],
 
+  globalFontface: {
+    Inter: [
+      {
+        src: 'url("/fonts/inter-v18-latin-regular.woff2") format("woff2");',
+        fontWeight: 400,
+        fontStyle: "normal",
+        fontDisplay: "swap",
+      },
+      {
+        src: 'url("/fonts/inter-v18-latin-500.woff2") format("woff2");',
+        fontWeight: 500,
+        fontStyle: "normal",
+        fontDisplay: "swap",
+      },
+      {
+        src: 'url("/fonts/inter-v18-latin-600.woff2") format("woff2");',
+        fontWeight: 600,
+        fontStyle: "normal",
+        fontDisplay: "swap",
+      },
+      {
+        src: 'url("/fonts/inter-v18-latin-700.woff2") format("woff2");',
+        fontWeight: 700,
+        fontStyle: "normal",
+        fontDisplay: "swap",
+      },
+    ],
+  },
+
   // Useful for theme customization
   theme: {
-    extend: {},
+    semanticTokens: {
+      colors: {
+        borders: {
+          value: { base: "#DEDEDE", _dark: "#38444D" },
+        },
+        text_main: {
+          value: { base: "#555555", _dark: "#8899A6" },
+        },
+        text_muted: {
+          value: { base: "{colors.zinc.500}", _dark: "{colors.zinc.500}" },
+        },
+        post_color: {
+          value: { base: "#111111", _dark: "#FFFFFF" },
+        },
+        highlight: {
+          value: { base: "#1FA1F2", _dark: "#1FA1F2" },
+        },
+        medium_background: {
+          value: { base: "#F0F0F3", _dark: "#192734" },
+        },
+        background: {
+          value: { base: "#FFFFFF", _dark: "#16202C" },
+        },
+        db_white: {
+          value: { base: "#FFFFFF", _dark: "#FFFFFF" },
+        },
+        db_black: {
+          value: { base: "#000000", _dark: "#000000" },
+        }
+      },
+    },
   },
 
   // The output directory for your css system

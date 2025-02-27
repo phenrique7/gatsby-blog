@@ -1,11 +1,36 @@
 <script setup lang="ts">
+import { css } from "styled-system/css";
 import { flex } from "styled-system/patterns";
+import Sidebar from "~/ui/components/sidebar/sidebar.vue";
+
+useHead({
+  bodyAttrs: {
+    class: css({ fontFamily: "Inter" }),
+  },
+});
 </script>
 
 <template>
-  <div :class="flex()">
-    LeftSidebar
-    <slot />
-<!--    <RightSidebar />-->
+  <div
+    :class="
+      flex({ flexDirection: 'column', md: { flexDirection: 'row' } })
+    "
+  >
+    <Sidebar />
+    <main
+      :class="
+        css({
+          px: 0,
+          width: '100%',
+          mt: '3.875rem',
+          minHeight: '100dvh',
+          background: 'background',
+          md: { pl: 80, pr: 14 },
+        })
+      "
+    >
+      <slot />
+    </main>
+    RightSidebar
   </div>
 </template>

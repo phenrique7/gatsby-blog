@@ -4,10 +4,11 @@ const props = defineProps<{ color?: string }>();
 
 <template>
   <svg
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     aria-hidden="true"
     focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
     :fill="props.color ?? 'currentColor'"
   >
     <path

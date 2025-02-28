@@ -6,6 +6,8 @@ const props = defineProps<{ color?: string }>();
 
 <template>
   <svg
+    width="25"
+    height="16"
     fill="none"
     viewBox="0 0 25 16"
     xmlns="http://www.w3.org/2000/svg"

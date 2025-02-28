@@ -3,7 +3,8 @@ import type { StorybookConfig } from '@storybook-vue/nuxt';
 const config: StorybookConfig = {
   "stories": [
     "../components/**/*.mdx",
-    "../components/**/*.stories.@(js|jsx|ts|tsx|mdx)"
+    "../components/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+    "../ui/**/*.stories.@(js|jsx|ts|tsx|mdx)"
   ],
   "addons": [
     "@storybook/addon-essentials",
@@ -15,4 +16,5 @@ const config: StorybookConfig = {
     "options": {}
   }
 };
+
 export default config;

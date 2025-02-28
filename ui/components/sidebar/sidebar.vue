@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { css } from "styled-system/css";
 import { flex } from "styled-system/patterns";
+import MenuIcon from "~/ui/icons/menu-icon.vue";
+import Navigation from "~/ui/components/navigation/navigation.vue";
+import IconButton from "~/ui/components/icon-button/icon-button.vue";
 import SocialNetworks from "~/ui/components/social-networks/social-networks.vue";
 </script>
 
@@ -29,62 +32,84 @@ import SocialNetworks from "~/ui/components/social-networks/social-networks.vue"
       })
     "
   >
-    <NuxtLink
-      to="/"
+    <div
       :class="
         flex({
-          gap: 2,
+          width: '100%',
           alignItems: 'center',
-          md: { gap: 3, flexDirection: 'column' },
+          md: { width: 'auto' },
+          justify: 'space-between',
         })
       "
     >
-      <div :class="css({ w: 9, h: 9, md: { mx: 'auto', w: 24, h: 24 } })">
-        <NuxtImg
-          src="/images/notion-avatar.png"
-          alt="Paulo Henrique's profile picture"
-          :class="
-            css({
-              borderRadius: 'full',
-              outline: '1px solid rgba(0, 0, 0, 0.08)',
-            })
-          "
-        />
-      </div>
-      <div :class="flex({ flexDirection: 'column' })">
-        <h1
-          :class="
-            css({
-              mt: 0.5,
-              lineHeight: 1,
-              color: 'text_main',
-              fontWeight: 'semibold',
-              md: {
-                mt: 0,
-                fontSize: '2xl',
-                lineHeight: 'normal',
-              },
-            })
-          "
+      <NuxtLink
+        to="/"
+        :class="
+          flex({
+            gap: 2,
+            alignItems: 'center',
+            md: { gap: 3, flexDirection: 'column' },
+          })
+        "
+      >
+        <div
+          :class="css({ w: 9, h: 9, md: { mx: 'auto', w: 24, h: 24 } })"
         >
-          Paulo Henrique
-        </h1>
-        <small
-          :class="
-            css({
-              mt: 0.5,
-              ml: -2.5,
-              fontSize: 'xs',
-              color: 'text_muted',
-              fontWeight: 'medium',
-              md: { mt: 0, fontSize: 'md' },
-            })
-          "
-        >
-          Software Engineer
-        </small>
-      </div>
-    </NuxtLink>
+          <NuxtImg
+            alt="Paulo Henrique's avatar"
+            src="/images/notion-avatar.png"
+            :class="
+              css({
+                borderRadius: 'full',
+                outline: '1px solid rgba(0, 0, 0, 0.08)',
+              })
+            "
+          />
+        </div>
+        <div :class="flex({ flexDirection: 'column' })">
+          <h1
+            :class="
+              css({
+                mt: 0.5,
+                ml: -4,
+                lineHeight: 1,
+                fontSize: 'sm',
+                color: 'text_main',
+                fontWeight: 'semibold',
+                md: {
+                  mt: 0,
+                  ml: 0,
+                  fontSize: '2xl',
+                  lineHeight: 'normal',
+                },
+              })
+            "
+          >
+            Paulo Henrique
+          </h1>
+          <small
+            :class="
+              css({
+                mt: 0.5,
+                ml: 0.5,
+                fontSize: 'sm',
+                color: 'text_muted',
+                fontWeight: 'medium',
+                md: { mt: 0, fontSize: 'md' },
+              })
+            "
+          >
+            Software Engineer
+          </small>
+        </div>
+      </NuxtLink>
+      <IconButton
+        variant="ghost"
+        :overrides="{ root: css.raw({ hideFrom: 'md' }) }"
+      >
+        <MenuIcon color="var(--colors-text_main)" />
+      </IconButton>
+    </div>
     <p
       :class="
         css({
@@ -96,8 +121,25 @@ import SocialNetworks from "~/ui/components/social-networks/social-networks.vue"
         })
       "
     >
-      A blog about software engineering and other cool stuff.
+      A dummy blog about software engineering and other cool stuff.
     </p>
     <SocialNetworks />
+    <Navigation />
+    <small :class="css({ flex: 1, alignContent: 'end' })">
+      <NuxtLink
+        to="https://github.com/phenrique7/gatsby-blog"
+        :class="
+          css({
+            hideBelow: 'md',
+            color: 'text_muted',
+            textDecoration: 'underline',
+            fontFamily: 'Liberation Mono',
+            textDecorationColor: 'text_muted',
+          })
+        "
+      >
+        source
+      </NuxtLink>
+    </small>
   </aside>
 </template>

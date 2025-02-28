@@ -52,19 +52,19 @@ export default defineConfig({
           value: { base: "#DEDEDE", _dark: "#38444D" },
         },
         text_main: {
-          value: { base: "#555555", _dark: "#8899A6" },
+          value: { base: "{colors.stone.800}", _dark: "#E2E8f0" },
         },
         text_muted: {
-          value: { base: "{colors.zinc.500}", _dark: "{colors.zinc.500}" },
+          value: { base: "{colors.zinc.500}", _dark: "#8899A6" },
         },
         post_color: {
           value: { base: "#111111", _dark: "#FFFFFF" },
         },
         highlight: {
-          value: { base: "#1FA1F2", _dark: "#1FA1F2" },
+          value: { base: "{colors.blue.500}", _dark: "{colors.blue.500}" },
         },
         medium_background: {
-          value: { base: "#F0F0F3", _dark: "#192734" },
+          value: { base: "#F0F0F3", _dark: "#1f3141" },
         },
         background: {
           value: { base: "#FFFFFF", _dark: "#16202C" },

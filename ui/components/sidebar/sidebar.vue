@@ -39,6 +39,7 @@ watch(
       flex({
         px: 6,
         py: 3,
+        zIndex: 1,
         width: '100%',
         height: 'auto',
         position: 'fixed',
@@ -208,7 +209,7 @@ watch(
           css({
             top: 0,
             left: 0,
-            zIndex: 1,
+            zIndex: 2,
             width: '100%',
             height: '100%',
             position: 'fixed',
@@ -230,7 +231,7 @@ watch(
         :class="
           flex({
             p: 6,
-            zIndex: 1,
+            zIndex: 2,
             height: '80%',
             width: '100vw',
             position: 'relative',

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { container } from "styled-system/patterns";
+
 const route = useRoute();
 
 const { data: page } = await useAsyncData(
@@ -11,7 +13,19 @@ const { data: page } = await useAsyncData(
 
 <template>
   <template v-if="page">
-    <ContentRenderer :value="page" />
+    <ContentRenderer
+      :value="page"
+      :class="
+        container({
+          pt: 5,
+          pb: 20,
+          px: 6,
+          md: { py: 16 },
+          lg: { maxW: '2xl' },
+          xl: { maxW: '3xl' },
+        })
+      "
+    />
   </template>
   <template v-else>
     <div>

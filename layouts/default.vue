@@ -7,14 +7,14 @@ import { useCookieManager } from "~/composables/use-cookie-manager";
 
 const { displayPreferences } = useCookieManager();
 
-useHead({
+useHead(() => ({
   htmlAttrs: {
     class: displayPreferences.value.theme,
   },
   bodyAttrs: {
     class: css({ fontFamily: "Inter" }),
   },
-});
+}));
 </script>
 
 <template>

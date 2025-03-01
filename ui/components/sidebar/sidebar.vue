@@ -121,7 +121,7 @@ import SocialNetworks from "~/ui/components/social-networks/social-networks.vue"
         })
       "
     >
-      A dummy blog about software engineering and other cool stuff.
+      A dummy blog about software engineering and other random stuff.
     </p>
     <SocialNetworks />
     <Navigation />

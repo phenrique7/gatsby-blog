@@ -12,16 +12,6 @@ import IconButton from "~/ui/components/icon-button/icon-button.vue";
 
 const { displayPreferences, setPreferredTheme, setPreferredDisplay } =
   useCookieManager();
-
-watchEffect(
-  () => {
-    document.querySelector("html")!.className =
-      displayPreferences.value.theme;
-  },
-  {
-    flush: "post",
-  },
-);
 </script>
 
 <template>

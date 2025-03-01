@@ -96,30 +96,26 @@ const socialNetworks = [
 </script>
 
 <template>
-  <div :class="css({ mx: 'auto', my: 8, width: '100%', hideBelow: 'md' })">
-    <ul
-      :class="
-        flex({ justifyContent: 'space-around', alignItems: 'center' })
-      "
-    >
-      <li v-for="socialNetwork in socialNetworks">
-        <NuxtLink :to="socialNetwork.link" :title="socialNetwork.label">
-          <span
-            v-html="socialNetwork.icon"
-            :class="
-              css({
-                display: 'block',
-                color: 'text_main',
-                transition: 'color 0.3s',
-                '&:hover': { color: 'highlight' },
-                w: socialNetwork.label.includes('X') ? 7 : 8,
-                h: socialNetwork.label.includes('X') ? 7 : 8,
-              })
-            "
-          >
-          </span>
-        </NuxtLink>
-      </li>
-    </ul>
-  </div>
+  <ul
+    :class="flex({ justifyContent: 'space-around', alignItems: 'center' })"
+  >
+    <li v-for="socialNetwork in socialNetworks">
+      <NuxtLink :to="socialNetwork.link" :title="socialNetwork.label">
+        <span
+          v-html="socialNetwork.icon"
+          :class="
+            css({
+              display: 'block',
+              color: 'text_main',
+              transition: 'color 0.3s',
+              '&:hover': { color: 'highlight' },
+              w: socialNetwork.label.includes('X') ? 7 : 8,
+              h: socialNetwork.label.includes('X') ? 7 : 8,
+            })
+          "
+        >
+        </span>
+      </NuxtLink>
+    </li>
+  </ul>
 </template>

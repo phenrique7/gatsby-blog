@@ -46,6 +46,34 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
+    extend: {
+      keyframes: {
+        "backdrop-appearance": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        "backdrop-disappearance": {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+        "dialog-appearance": {
+          "0%": {
+            opacity: 0,
+            marginBottom: "-3rem",
+            transform: "scale(0.95)",
+          },
+          "100%": { opacity: 1, transform: "scale(1)" },
+        },
+        "dialog-disappearance": {
+          "0%": { opacity: 1, marginBottom: 0, transform: "scale(1)" },
+          "100%": {
+            opacity: 0,
+            marginBottom: "-3rem",
+            transform: "scale(0.95)",
+          },
+        },
+      },
+    },
     semanticTokens: {
       colors: {
         borders: {
@@ -69,12 +97,18 @@ export default defineConfig({
         background: {
           value: { base: "#FFFFFF", _dark: "#16202C" },
         },
+        backdrop: {
+          value: {
+            base: "rgba(0, 0, 0, 0.48)",
+            _dark: "hsla(0, 0%, 100%, 0.48)",
+          },
+        },
         db_white: {
           value: { base: "#FFFFFF", _dark: "#FFFFFF" },
         },
         db_black: {
           value: { base: "#000000", _dark: "#000000" },
-        }
+        },
       },
     },
   },

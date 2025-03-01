@@ -29,10 +29,10 @@ useHead(() => ({
         css({
           px: 0,
           width: '100%',
-          mt: '3.875rem',
+          pt: '3.875rem',
           minHeight: '100dvh',
           background: 'background',
-          md: { mt: 0, pl: 80, pr: 14 },
+          md: { pt: 0, pl: 80, pr: 14 },
         })
       "
     >

@@ -2,9 +2,35 @@
 import { css } from "styled-system/css";
 import { flex } from "styled-system/patterns";
 import MenuIcon from "~/ui/icons/menu-icon.vue";
+import CloseIcon from "~/ui/icons/close-icon.vue";
 import Navigation from "~/ui/components/navigation/navigation.vue";
 import IconButton from "~/ui/components/icon-button/icon-button.vue";
 import SocialNetworks from "~/ui/components/social-networks/social-networks.vue";
+
+const dialog = reactive({ open: false, preClosed: false });
+const route = useRoute();
+
+useHead(() => ({
+  htmlAttrs: {
+    ...(dialog.open && { style: "overflow: hidden" }),
+  },
+}));
+
+function onCloseDialog() {
+  dialog.preClosed = true;
+  setTimeout(() => {
+    dialog.open = false;
+  }, 300);
+}
+
+watch(
+  () => route.path,
+  () => {
+    if (dialog.open) {
+      onCloseDialog();
+    }
+  },
+);
 </script>
 
 <template>
@@ -66,12 +92,19 @@ import SocialNetworks from "~/ui/components/social-networks/social-networks.vue"
             "
           />
         </div>
-        <div :class="flex({ flexDirection: 'column' })">
+        <div
+          :class="
+            flex({
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              md: { alignItems: 'center' },
+            })
+          "
+        >
           <h1
             :class="
               css({
                 mt: 0.5,
-                ml: -4,
                 lineHeight: 1,
                 fontSize: 'sm',
                 color: 'text_main',
@@ -85,13 +118,12 @@ import SocialNetworks from "~/ui/components/social-networks/social-networks.vue"
               })
             "
           >
-            Paulo Henrique
+            Alexander Maxwell
           </h1>
           <small
             :class="
               css({
                 mt: 0.5,
-                ml: 0.5,
                 fontSize: 'sm',
                 color: 'text_muted',
                 fontWeight: 'medium',
@@ -107,7 +139,13 @@ import SocialNetworks from "~/ui/components/social-networks/social-networks.vue"
         variant="ghost"
         :overrides="{ root: css.raw({ hideFrom: 'md' }) }"
       >
-        <MenuIcon color="var(--colors-text_main)" />
+        <MenuIcon
+          color="var(--colors-text_main)"
+          @click="
+            dialog.preClosed = false;
+            dialog.open = true;
+          "
+        />
       </IconButton>
     </div>
     <p
@@ -123,23 +161,107 @@ import SocialNetworks from "~/ui/components/social-networks/social-networks.vue"
     >
       A dummy blog about software engineering and other random stuff.
     </p>
-    <SocialNetworks />
-    <Navigation />
-    <small :class="css({ flex: 1, alignContent: 'end' })">
-      <NuxtLink
-        to="https://github.com/phenrique7/gatsby-blog"
+    <div
+      :class="
+        css({
+          my: 10,
+          width: 16,
+          height: '1px',
+          hideBelow: 'md',
+          bgColor: 'text_muted',
+        })
+      "
+    />
+    <div :class="css({ hideBelow: 'md' })">
+      <Navigation />
+    </div>
+    <div
+      :class="
+        css({
+          flex: 1,
+          mx: 'auto',
+          width: '100%',
+          hideBelow: 'md',
+          alignContent: 'end',
+        })
+      "
+    >
+      <SocialNetworks />
+    </div>
+  </aside>
+  <Teleport to="body">
+    <div
+      v-if="dialog.open"
+      :class="
+        flex({
+          hideFrom: 'md',
+          height: '100dvh',
+          position: 'absolute',
+          alignItems: 'flex-end',
+        })
+      "
+    >
+      <div
+        @click="onCloseDialog"
+        v-bind="{ [`data-${dialog.preClosed ? 'closed' : 'open'}`]: '' }"
         :class="
           css({
-            hideBelow: 'md',
-            color: 'text_muted',
-            textDecoration: 'underline',
-            fontFamily: 'Liberation Mono',
-            textDecorationColor: 'text_muted',
+            top: 0,
+            left: 0,
+            zIndex: 1,
+            width: '100%',
+            height: '100%',
+            position: 'fixed',
+            background: 'backdrop',
+            backdropFilter: 'blur(4px)',
+            _open: {
+              animationDuration: '0.3s',
+              animationName: 'backdrop-appearance',
+            },
+            _closed: {
+              animationDuration: '0.3s',
+              animationName: 'backdrop-disappearance',
+            },
+          })
+        "
+      />
+      <div
+        v-bind="{ [`data-${dialog.preClosed ? 'closed' : 'open'}`]: '' }"
+        :class="
+          flex({
+            p: 6,
+            zIndex: 1,
+            height: '80%',
+            width: '100vw',
+            position: 'relative',
+            flexDirection: 'column',
+            borderTopLeftRadius: 'lg',
+            borderTopRightRadius: 'lg',
+            justifyContent: 'space-between',
+            background: 'medium_background',
+            _open: {
+              animationDuration: '0.3s',
+              animationName: 'dialog-appearance',
+            },
+            _closed: {
+              animationDuration: '0.3s',
+              animationName: 'dialog-disappearance',
+            },
           })
         "
       >
-        source
-      </NuxtLink>
-    </small>
-  </aside>
+        <div
+          :class="
+            flex({ justifyContent: 'flex-end', alignItems: 'center' })
+          "
+        >
+          <IconButton @click="onCloseDialog" variant="ghost">
+            <CloseIcon color="var(--colors-text_main)" />
+          </IconButton>
+        </div>
+        <Navigation />
+        <SocialNetworks />
+      </div>
+    </div>
+  </Teleport>
 </template>

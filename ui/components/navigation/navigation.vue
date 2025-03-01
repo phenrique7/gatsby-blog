@@ -20,17 +20,32 @@ const navLinks = [
     name: "Guestbook",
     routeName: "guestbook",
   },
+  {
+    route: "https://github.com/phenrique7/gatsby-blog",
+    name: "Source",
+    routeName: "source",
+  },
 ] as const;
 </script>
 
 <template>
-  <nav :class="css({ pt: 8, hideBelow: 'md' })">
-    <ul :class="flex({ flexDirection: 'column', gap: 2 })">
+  <nav>
+    <ul
+      :class="
+        flex({
+          gap: 4,
+          textAlign: 'center',
+          flexDirection: 'column',
+          md: { gap: 2 },
+        })
+      "
+    >
       <li v-for="navLink in navLinks" :key="navLink.name">
         <NuxtLink
           :to="navLink.route"
           :class="
             css({
+              fontSize: 'xl',
               fontWeight:
                 route.name === navLink.routeName ? 'medium' : 'normal',
               color:
@@ -40,6 +55,7 @@ const navLinks = [
               '&:hover': {
                 textDecoration: 'underline',
               },
+              md: { fontSize: 'md' },
             })
           "
         >

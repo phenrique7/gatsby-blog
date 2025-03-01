@@ -23,5 +23,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/storybook", "@nuxt/image"],
+  modules: ["@nuxtjs/storybook", "@nuxt/image", "@nuxt/content"],
 });

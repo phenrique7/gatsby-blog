@@ -16,6 +16,7 @@ export const iconButtonSva = sva({
       },
     },
     icon: {
+      alignItems: "center",
       display: "inline-flex",
     },
   },

@@ -1,10 +1,9 @@
 ---
 date: 2015-05-10 05:54:23
 title: I am so clever
-description:
-  That sometimes I don't understand a single word of what I am saying
+description: That sometimes I don't understand a single word of what I am saying
 category: css
-background: '#24809e'
+background: "#24809e"
 ---
 
 [The Big Oxmox](http://google.com) advised her not to do so, because there
@@ -16,6 +15,11 @@ Fusce a metus eu diam varius congue nec nec sapien. Nunc convallis accumsan
 justo. **Pellentesque** habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas. Donec malesuada vehicula lectus, viverra
 sodales ipsum gravida nec.
+
+- Just
+- An
+- Unordered
+- List
 
 _Integer gravida_ nisi ut magna mollis molestie. Nullam pharetra accumsan
 sagittis. Proin tristique rhoncus orci, eget vulputate nisi sollicitudin
@@ -32,6 +36,12 @@ Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et
 felis metus, rhoncus ornare nibh. Ut at magna leo. Suspendisse egestas est
 ac dolor imperdiet pretium. Lorem ipsum dolor sit amet, consectetur
 adipiscing elit.
+
+```js [file.js]{2} meta-info=val
+export default () => {
+  console.log("Code block");
+};
+```
 
 Nam porttitor, erat sit amet venenatis luctus, augue libero ultrices quam,
 ut congue nisi risus eu purus. Cras semper consectetur elementum. Nulla vel

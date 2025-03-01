@@ -4,7 +4,6 @@ import Navigation from "~/ui/components/navigation/navigation.vue";
 const meta = {
   title: "Components/Navigation",
   component: Navigation,
-  tags: ["autodocs"],
 } satisfies Meta<typeof Navigation>;
 
 export default meta;

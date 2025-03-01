@@ -8,7 +8,6 @@ const meta = {
   title: "Components/IconButton",
   component: IconButton,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
-  tags: ["autodocs"],
 } satisfies Meta<typeof IconButton>;
 
 export default meta;

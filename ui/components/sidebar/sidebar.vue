@@ -190,15 +190,14 @@ watch(
       <SocialNetworks />
     </div>
   </aside>
-  <Teleport to="body">
+  <Teleport to="#teleports">
     <div
       v-if="dialog.open"
       :class="
         flex({
+          width: '100%',
           hideFrom: 'md',
           height: '100dvh',
-          position: 'absolute',
-          alignItems: 'flex-end',
         })
       "
     >
@@ -209,7 +208,7 @@ watch(
           css({
             top: 0,
             left: 0,
-            zIndex: 2,
+            zIndex: 3,
             width: '100%',
             height: '100%',
             position: 'fixed',
@@ -231,10 +230,11 @@ watch(
         :class="
           flex({
             p: 6,
-            zIndex: 2,
+            bottom: 0,
+            zIndex: 3,
             height: '80%',
             width: '100vw',
-            position: 'relative',
+            position: 'fixed',
             flexDirection: 'column',
             borderTopLeftRadius: 'lg',
             borderTopRightRadius: 'lg',

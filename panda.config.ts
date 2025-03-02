@@ -59,16 +59,16 @@ export default defineConfig({
         "dialog-appearance": {
           "0%": {
             opacity: 0,
-            marginBottom: "-3rem",
+            bottom: "-3rem",
             transform: "scale(0.95)",
           },
-          "100%": { opacity: 1, transform: "scale(1)" },
+          "100%": { opacity: 1, transform: "scale(1)", bottom: 0 },
         },
         "dialog-disappearance": {
-          "0%": { opacity: 1, marginBottom: 0, transform: "scale(1)" },
+          "0%": { opacity: 1, bottom: 0, transform: "scale(1)" },
           "100%": {
             opacity: 0,
-            marginBottom: "-3rem",
+            bottom: "-3rem",
             transform: "scale(0.95)",
           },
         },

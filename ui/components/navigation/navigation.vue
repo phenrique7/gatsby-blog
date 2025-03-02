@@ -21,7 +21,7 @@ const navLinks = [
     routeName: "guestbook",
   },
   {
-    route: "https://github.com/phenrique7/gatsby-blog",
+    route: "https://github.com/phenrique7/dummy-blog",
     name: "Source",
     routeName: "source",
   },

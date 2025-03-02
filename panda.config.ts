@@ -85,6 +85,9 @@ export default defineConfig({
         text_muted: {
           value: { base: "{colors.zinc.500}", _dark: "#8899A6" },
         },
+        text_secondary: {
+          value: { base: "{colors.zinc.700}", _dark: "{colors.zinc.400}" },
+        },
         post_color: {
           value: { base: "#111111", _dark: "#FFFFFF" },
         },

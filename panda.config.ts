@@ -97,6 +97,9 @@ export default defineConfig({
         medium_background: {
           value: { base: "#F0F0F3", _dark: "#1f3141" },
         },
+        medium_bg_hover: {
+          value: { base: "{colors.gray.200}", _dark: "{colors.gray.800}" },
+        },
         background: {
           value: { base: "#FFFFFF", _dark: "#16202C" },
         },

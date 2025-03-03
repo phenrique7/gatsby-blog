@@ -23,11 +23,11 @@ Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi n
 
 ```js [foobar]
 let baz = {
-  bar: 'next',
-  foo: 'quux',
-}
+  bar: "next",
+  foo: "quux",
+};
 
-console.log('baz', baz);
+console.log("baz", baz);
 ```
 
 Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Quem num gosta di mé, boa gentis num é. Per aumento de cachacis, eu reclamis. In elementis mé pra quem é amistosis quis leo.

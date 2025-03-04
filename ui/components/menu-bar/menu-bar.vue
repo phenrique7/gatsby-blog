@@ -7,11 +7,11 @@ import ListIcon from "~/ui/icons/list-icon.vue";
 import LightIcon from "~/ui/icons/light-icon.vue";
 import SearchIcon from "~/ui/icons/search-icon.vue";
 import ArrowUpIcon from "~/ui/icons/arrow-up-icon.vue";
-import { useCookieManager } from "~/composables/use-cookie-manager";
+import { useDisplayPreferences } from "~/composables/use-display-preferences";
 import IconButton from "~/ui/components/icon-button/icon-button.vue";
 
 const { displayPreferences, setPreferredTheme, setPreferredDisplay } =
-  useCookieManager();
+  useDisplayPreferences();
 </script>
 
 <template>
@@ -66,7 +66,7 @@ const { displayPreferences, setPreferredTheme, setPreferredDisplay } =
             :overrides="{
               root: css.raw({ width: '100%' }),
               icon: css.raw({
-                '& svg': { transition: 'fill 0.3s' },
+                '& svg': { transition: 'fill 0.2s' },
                 '& svg:hover': { fill: 'highlight' },
               }),
             }"
@@ -90,7 +90,7 @@ const { displayPreferences, setPreferredTheme, setPreferredDisplay } =
           :overrides="{
             root: css.raw({ width: '100%' }),
             icon: css.raw({
-              '& svg': { transition: 'fill 0.3s' },
+              '& svg': { transition: 'fill 0.2s' },
               '& svg:hover': { fill: 'highlight' },
             }),
           }"
@@ -128,7 +128,7 @@ const { displayPreferences, setPreferredTheme, setPreferredDisplay } =
           :overrides="{
             root: css.raw({ width: '100%' }),
             icon: css.raw({
-              '& svg': { transition: 'fill 0.3s' },
+              '& svg': { transition: 'fill 0.2s' },
               '& svg:hover': {
                 fill:
                   displayPreferences.theme === 'light'
@@ -153,7 +153,7 @@ const { displayPreferences, setPreferredTheme, setPreferredDisplay } =
         :overrides="{
           root: css.raw({ hideBelow: 'md' }),
           icon: css.raw({
-            '& svg': { transition: 'fill 0.3s' },
+            '& svg': { transition: 'fill 0.2s' },
             '& svg:hover': { fill: 'highlight' },
           }),
         }"
@@ -179,7 +179,7 @@ const { displayPreferences, setPreferredTheme, setPreferredDisplay } =
           :overrides="{
             root: css.raw({ width: '100%' }),
             icon: css.raw({
-              '& svg': { transition: 'fill 0.3s' },
+              '& svg': { transition: 'fill 0.2s' },
               '& svg:hover': { fill: 'highlight' },
             }),
           }"

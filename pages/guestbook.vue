@@ -3,6 +3,7 @@ import { css } from "styled-system/css";
 import { container, hstack } from "styled-system/patterns";
 import GoogleIcon from "~/ui/icons/google-icon.vue";
 import GitHubIcon from "~/ui/icons/github-icon.vue";
+import Input from "~/ui/components/input/input.vue";
 import Button from "~/ui/components/button/button.vue";
 
 useSeoMeta({
@@ -13,6 +14,8 @@ useSeoMeta({
   ogImage: "https://example.com/image.png",
   twitterCard: "summary_large_image",
 });
+
+const signText = ref("");
 </script>
 
 <template>
@@ -62,6 +65,41 @@ useSeoMeta({
         </template>
         Sign in with GitHub
       </Button>
+    </div>
+    <div :class="css({ maxW: '100%', md: { maxW: 'xl' } })">
+      <Input
+        v-model="signText"
+        inputId="sign-guestbook"
+        placeholder="Your message..."
+      >
+        <template v-slot:right-element>
+          <button
+            :class="
+              css({
+                padding: 3,
+                fontSize: 'xs',
+                color: 'text_main',
+                position: 'relative',
+                fontWeight: 'semibold',
+				backgroundColor: 'medium_background',
+                _hover: {
+                  cursor: 'pointer',
+                },
+                _focus: {
+                  outline: '2px solid rgb(10, 13, 39)',
+                },
+              })
+            "
+          >
+            Sign
+          </button>
+        </template>
+      </Input>
+	  <div :class="css({ w: '4.5rem' })">
+	    <Button size="sm" variant="ghost">
+		  Sign out
+	    </Button>
+	  </div>
     </div>
   </div>
 </template>

@@ -15,6 +15,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 
+const logged = false;
 const signText = ref("");
 </script>
 
@@ -44,6 +45,7 @@ const signText = ref("");
       Sign my guestbook
     </h1>
     <div
+      v-if="!logged"
       :class="
         hstack({
           mt: 6,
@@ -66,7 +68,7 @@ const signText = ref("");
         Sign in with GitHub
       </Button>
     </div>
-    <div :class="css({ maxW: '100%', md: { maxW: 'xl' } })">
+    <div v-else :class="css({ maxW: '100%', md: { maxW: 'xl' } })">
       <Input
         v-model="signText"
         inputId="sign-guestbook"

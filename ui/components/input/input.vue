@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { flex } from "styled-system/patterns";
 import { css, type Styles } from "styled-system/css";
 
 defineProps<{
